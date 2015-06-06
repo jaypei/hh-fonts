@@ -1,0 +1,13 @@
+
+* Build
+
+#+BEGIN_SRC sh
+./build.sh
+#+END_SRC
+
+* Install
+
+#+BEGIN_SRC sh
+cp -r dest ~/.fonts/hh-fonts
+fc-cache -fv ~/.fonts/hh-fonts
+#+END_SRC
