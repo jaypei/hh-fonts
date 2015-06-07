@@ -27,8 +27,8 @@ mkdir -p $DESTDIR
 
 for i in $(ls $SFDDIR); do
     printf "converting %-20s" $i
-    $CONVERT "$SFDDIR/$i" "$DESTDIR/${i%.sfd}.ttf" > /dev/null 2>&1
-    if test $?; then
+    $CONVERT "$SFDDIR/$i" "$DESTDIR/${i%.sfd}.ttf" > $BASEDIR/build.log 2>&1
+    if [ $? -eq 0 ]; then
         clr_escape "done" 32
     else
         clr_escape "failed" 31
